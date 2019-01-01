@@ -1,0 +1,4 @@
+bool state # state of the ros control node, send or stop
+---
+bool state # state of the arduino node sending or standby.
+sensor_msgs/Joy joystick_data # joystick data
