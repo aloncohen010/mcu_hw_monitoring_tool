@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>workspace</class>
+ <widget class="QMainWindow" name="workspace">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAdd">
+    <property name="title">
+     <string>Add...</string>
+    </property>
+    <addaction name="actionSensor"/>
+    <addaction name="actionControl"/>
+    <addaction name="actionGraph"/>
+    <addaction name="actionGauge"/>
+    <addaction name="actionLogger"/>
+   </widget>
+   <addaction name="menuAdd"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSensor">
+   <property name="text">
+    <string>Sensor...</string>
+   </property>
+  </action>
+  <action name="actionControl">
+   <property name="text">
+    <string>Control...</string>
+   </property>
+  </action>
+  <action name="actionGraph">
+   <property name="text">
+    <string>Graph...</string>
+   </property>
+  </action>
+  <action name="actionGauge">
+   <property name="text">
+    <string>Gauge...</string>
+   </property>
+  </action>
+  <action name="actionLogger">
+   <property name="text">
+    <string>Logger...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
