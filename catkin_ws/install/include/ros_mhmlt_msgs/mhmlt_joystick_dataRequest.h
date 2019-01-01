@@ -24,17 +24,17 @@ struct mhmlt_joystick_dataRequest_
   typedef mhmlt_joystick_dataRequest_<ContainerAllocator> Type;
 
   mhmlt_joystick_dataRequest_()
-    : state(false)  {
+    : command(false)  {
     }
   mhmlt_joystick_dataRequest_(const ContainerAllocator& _alloc)
-    : state(false)  {
+    : command(false)  {
   (void)_alloc;
     }
 
 
 
-   typedef uint8_t _state_type;
-  _state_type state;
+   typedef uint8_t _command_type;
+  _command_type command;
 
 
 
@@ -114,12 +114,12 @@ struct MD5Sum< ::ros_mhmlt_msgs::mhmlt_joystick_dataRequest_<ContainerAllocator>
 {
   static const char* value()
   {
-    return "001fde3cab9e313a150416ff09c08ee4";
+    return "01134d7a2df15c0112a6a1d7df9d666d";
   }
 
   static const char* value(const ::ros_mhmlt_msgs::mhmlt_joystick_dataRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x001fde3cab9e313aULL;
-  static const uint64_t static_value2 = 0x150416ff09c08ee4ULL;
+  static const uint64_t static_value1 = 0x01134d7a2df15c01ULL;
+  static const uint64_t static_value2 = 0x12a6a1d7df9d666dULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +138,7 @@ struct Definition< ::ros_mhmlt_msgs::mhmlt_joystick_dataRequest_<ContainerAlloca
 {
   static const char* value()
   {
-    return "bool state\n\
+    return "bool command\n\
 ";
   }
 
@@ -157,7 +157,7 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.state);
+      stream.next(m.command);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -176,8 +176,8 @@ struct Printer< ::ros_mhmlt_msgs::mhmlt_joystick_dataRequest_<ContainerAllocator
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::ros_mhmlt_msgs::mhmlt_joystick_dataRequest_<ContainerAllocator>& v)
   {
-    s << indent << "state: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.state);
+    s << indent << "command: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.command);
   }
 };
 

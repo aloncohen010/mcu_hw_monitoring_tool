@@ -7,12 +7,12 @@ import struct
 
 
 class mhmlt_joystick_dataRequest(genpy.Message):
-  _md5sum = "001fde3cab9e313a150416ff09c08ee4"
+  _md5sum = "01134d7a2df15c0112a6a1d7df9d666d"
   _type = "ros_mhmlt_msgs/mhmlt_joystick_dataRequest"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """bool state
+  _full_text = """bool command
 """
-  __slots__ = ['state']
+  __slots__ = ['command']
   _slot_types = ['bool']
 
   def __init__(self, *args, **kwds):
@@ -23,7 +23,7 @@ class mhmlt_joystick_dataRequest(genpy.Message):
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       state
+       command
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -32,10 +32,10 @@ class mhmlt_joystick_dataRequest(genpy.Message):
     if args or kwds:
       super(mhmlt_joystick_dataRequest, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.state is None:
-        self.state = False
+      if self.command is None:
+        self.command = False
     else:
-      self.state = False
+      self.command = False
 
   def _get_types(self):
     """
@@ -49,7 +49,7 @@ class mhmlt_joystick_dataRequest(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_B().pack(self.state))
+      buff.write(_get_struct_B().pack(self.command))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -62,8 +62,8 @@ class mhmlt_joystick_dataRequest(genpy.Message):
       end = 0
       start = end
       end += 1
-      (self.state,) = _get_struct_B().unpack(str[start:end])
-      self.state = bool(self.state)
+      (self.command,) = _get_struct_B().unpack(str[start:end])
+      self.command = bool(self.command)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -76,7 +76,7 @@ class mhmlt_joystick_dataRequest(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_B().pack(self.state))
+      buff.write(_get_struct_B().pack(self.command))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -90,8 +90,8 @@ class mhmlt_joystick_dataRequest(genpy.Message):
       end = 0
       start = end
       end += 1
-      (self.state,) = _get_struct_B().unpack(str[start:end])
-      self.state = bool(self.state)
+      (self.command,) = _get_struct_B().unpack(str[start:end])
+      self.command = bool(self.command)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -330,6 +330,6 @@ def _get_struct_B3I():
     return _struct_B3I
 class mhmlt_joystick_data(object):
   _type          = 'ros_mhmlt_msgs/mhmlt_joystick_data'
-  _md5sum = '1329a64fad65e08bad5df97dce71b9e1'
+  _md5sum = '00a7ccec808b16c3b52f1eea2d823951'
   _request_class  = mhmlt_joystick_dataRequest
   _response_class = mhmlt_joystick_dataResponse

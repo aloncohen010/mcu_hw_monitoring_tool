@@ -22,37 +22,37 @@
 
 (defclass ros_mhmlt_msgs::mhmlt_joystick_dataRequest
   :super ros::object
-  :slots (_state ))
+  :slots (_command ))
 
 (defmethod ros_mhmlt_msgs::mhmlt_joystick_dataRequest
   (:init
    (&key
-    ((:state __state) nil)
+    ((:command __command) nil)
     )
    (send-super :init)
-   (setq _state __state)
+   (setq _command __command)
    self)
-  (:state
-   (&optional __state)
-   (if __state (setq _state __state)) _state)
+  (:command
+   (&optional __command)
+   (if __command (setq _command __command)) _command)
   (:serialization-length
    ()
    (+
-    ;; bool _state
+    ;; bool _command
     1
     ))
   (:serialize
    (&optional strm)
    (let ((s (if strm strm
               (make-string-output-stream (send self :serialization-length)))))
-     ;; bool _state
-       (if _state (write-byte -1 s) (write-byte 0 s))
+     ;; bool _command
+       (if _command (write-byte -1 s) (write-byte 0 s))
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
-   ;; bool _state
-     (setq _state (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; bool _command
+     (setq _command (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
    ;;
    self)
   )
@@ -113,7 +113,7 @@
   :super ros::object
   :slots ())
 
-(setf (get ros_mhmlt_msgs::mhmlt_joystick_data :md5sum-) "1329a64fad65e08bad5df97dce71b9e1")
+(setf (get ros_mhmlt_msgs::mhmlt_joystick_data :md5sum-) "00a7ccec808b16c3b52f1eea2d823951")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_data :datatype-) "ros_mhmlt_msgs/mhmlt_joystick_data")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_data :request) ros_mhmlt_msgs::mhmlt_joystick_dataRequest)
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_data :response) ros_mhmlt_msgs::mhmlt_joystick_dataResponse)
@@ -121,10 +121,10 @@
 (defmethod ros_mhmlt_msgs::mhmlt_joystick_dataRequest
   (:response () (instance ros_mhmlt_msgs::mhmlt_joystick_dataResponse :init)))
 
-(setf (get ros_mhmlt_msgs::mhmlt_joystick_dataRequest :md5sum-) "1329a64fad65e08bad5df97dce71b9e1")
+(setf (get ros_mhmlt_msgs::mhmlt_joystick_dataRequest :md5sum-) "00a7ccec808b16c3b52f1eea2d823951")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_dataRequest :datatype-) "ros_mhmlt_msgs/mhmlt_joystick_dataRequest")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_dataRequest :definition-)
-      "bool state
+      "bool command
 ---
 bool state
 sensor_msgs/Joy joystick_data
@@ -156,10 +156,10 @@ time stamp
 string frame_id
 ")
 
-(setf (get ros_mhmlt_msgs::mhmlt_joystick_dataResponse :md5sum-) "1329a64fad65e08bad5df97dce71b9e1")
+(setf (get ros_mhmlt_msgs::mhmlt_joystick_dataResponse :md5sum-) "00a7ccec808b16c3b52f1eea2d823951")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_dataResponse :datatype-) "ros_mhmlt_msgs/mhmlt_joystick_dataResponse")
 (setf (get ros_mhmlt_msgs::mhmlt_joystick_dataResponse :definition-)
-      "bool state
+      "bool command
 ---
 bool state
 sensor_msgs/Joy joystick_data
@@ -193,6 +193,6 @@ string frame_id
 
 
 
-(provide :ros_mhmlt_msgs/mhmlt_joystick_data "1329a64fad65e08bad5df97dce71b9e1")
+(provide :ros_mhmlt_msgs/mhmlt_joystick_data "00a7ccec808b16c3b52f1eea2d823951")
 
 

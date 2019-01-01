@@ -14,11 +14,11 @@ static const char MHMLT_JOYSTICK_DATA[] = "ros_mhmlt_msgs/mhmlt_joystick_data";
   class mhmlt_joystick_dataRequest : public ros::Msg
   {
     public:
-      typedef bool _state_type;
-      _state_type state;
+      typedef bool _command_type;
+      _command_type command;
 
     mhmlt_joystick_dataRequest():
-      state(0)
+      command(0)
     {
     }
 
@@ -28,10 +28,10 @@ static const char MHMLT_JOYSTICK_DATA[] = "ros_mhmlt_msgs/mhmlt_joystick_data";
       union {
         bool real;
         uint8_t base;
-      } u_state;
-      u_state.real = this->state;
-      *(outbuffer + offset + 0) = (u_state.base >> (8 * 0)) & 0xFF;
-      offset += sizeof(this->state);
+      } u_command;
+      u_command.real = this->command;
+      *(outbuffer + offset + 0) = (u_command.base >> (8 * 0)) & 0xFF;
+      offset += sizeof(this->command);
       return offset;
     }
 
@@ -41,16 +41,16 @@ static const char MHMLT_JOYSTICK_DATA[] = "ros_mhmlt_msgs/mhmlt_joystick_data";
       union {
         bool real;
         uint8_t base;
-      } u_state;
-      u_state.base = 0;
-      u_state.base |= ((uint8_t) (*(inbuffer + offset + 0))) << (8 * 0);
-      this->state = u_state.real;
-      offset += sizeof(this->state);
+      } u_command;
+      u_command.base = 0;
+      u_command.base |= ((uint8_t) (*(inbuffer + offset + 0))) << (8 * 0);
+      this->command = u_command.real;
+      offset += sizeof(this->command);
      return offset;
     }
 
     const char * getType(){ return MHMLT_JOYSTICK_DATA; };
-    const char * getMD5(){ return "001fde3cab9e313a150416ff09c08ee4"; };
+    const char * getMD5(){ return "01134d7a2df15c0112a6a1d7df9d666d"; };
 
   };
 

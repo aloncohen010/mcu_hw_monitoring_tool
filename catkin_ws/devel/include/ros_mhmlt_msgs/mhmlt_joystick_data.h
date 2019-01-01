@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::ros_mhmlt_msgs::mhmlt_joystick_data > {
   static const char* value()
   {
-    return "1329a64fad65e08bad5df97dce71b9e1";
+    return "00a7ccec808b16c3b52f1eea2d823951";
   }
 
   static const char* value(const ::ros_mhmlt_msgs::mhmlt_joystick_data&) { return value(); }

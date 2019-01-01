@@ -7,9 +7,9 @@
 ;//! \htmlinclude mhmlt_joystick_data-request.msg.html
 
 (cl:defclass <mhmlt_joystick_data-request> (roslisp-msg-protocol:ros-message)
-  ((state
-    :reader state
-    :initarg :state
+  ((command
+    :reader command
+    :initarg :command
     :type cl:boolean
     :initform cl:nil))
 )
@@ -22,17 +22,17 @@
   (cl:unless (cl:typep m 'mhmlt_joystick_data-request)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name ros_mhmlt_msgs-srv:<mhmlt_joystick_data-request> is deprecated: use ros_mhmlt_msgs-srv:mhmlt_joystick_data-request instead.")))
 
-(cl:ensure-generic-function 'state-val :lambda-list '(m))
-(cl:defmethod state-val ((m <mhmlt_joystick_data-request>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_mhmlt_msgs-srv:state-val is deprecated.  Use ros_mhmlt_msgs-srv:state instead.")
-  (state m))
+(cl:ensure-generic-function 'command-val :lambda-list '(m))
+(cl:defmethod command-val ((m <mhmlt_joystick_data-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader ros_mhmlt_msgs-srv:command-val is deprecated.  Use ros_mhmlt_msgs-srv:command instead.")
+  (command m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <mhmlt_joystick_data-request>) ostream)
   "Serializes a message object of type '<mhmlt_joystick_data-request>"
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'state) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'command) 1 0)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <mhmlt_joystick_data-request>) istream)
   "Deserializes a message object of type '<mhmlt_joystick_data-request>"
-    (cl:setf (cl:slot-value msg 'state) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'command) (cl:not (cl:zerop (cl:read-byte istream))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<mhmlt_joystick_data-request>)))
@@ -43,16 +43,16 @@
   "ros_mhmlt_msgs/mhmlt_joystick_dataRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<mhmlt_joystick_data-request>)))
   "Returns md5sum for a message object of type '<mhmlt_joystick_data-request>"
-  "1329a64fad65e08bad5df97dce71b9e1")
+  "00a7ccec808b16c3b52f1eea2d823951")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'mhmlt_joystick_data-request)))
   "Returns md5sum for a message object of type 'mhmlt_joystick_data-request"
-  "1329a64fad65e08bad5df97dce71b9e1")
+  "00a7ccec808b16c3b52f1eea2d823951")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<mhmlt_joystick_data-request>)))
   "Returns full string definition for message of type '<mhmlt_joystick_data-request>"
-  (cl:format cl:nil "bool state~%~%~%"))
+  (cl:format cl:nil "bool command~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'mhmlt_joystick_data-request)))
   "Returns full string definition for message of type 'mhmlt_joystick_data-request"
-  (cl:format cl:nil "bool state~%~%~%"))
+  (cl:format cl:nil "bool command~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <mhmlt_joystick_data-request>))
   (cl:+ 0
      1
@@ -60,7 +60,7 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <mhmlt_joystick_data-request>))
   "Converts a ROS message object to a list"
   (cl:list 'mhmlt_joystick_data-request
-    (cl:cons ':state (state msg))
+    (cl:cons ':command (command msg))
 ))
 ;//! \htmlinclude mhmlt_joystick_data-response.msg.html
 
@@ -113,10 +113,10 @@
   "ros_mhmlt_msgs/mhmlt_joystick_dataResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<mhmlt_joystick_data-response>)))
   "Returns md5sum for a message object of type '<mhmlt_joystick_data-response>"
-  "1329a64fad65e08bad5df97dce71b9e1")
+  "00a7ccec808b16c3b52f1eea2d823951")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'mhmlt_joystick_data-response)))
   "Returns md5sum for a message object of type 'mhmlt_joystick_data-response"
-  "1329a64fad65e08bad5df97dce71b9e1")
+  "00a7ccec808b16c3b52f1eea2d823951")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<mhmlt_joystick_data-response>)))
   "Returns full string definition for message of type '<mhmlt_joystick_data-response>"
   (cl:format cl:nil "bool state~%sensor_msgs/Joy joystick_data~%~%~%================================================================================~%MSG: sensor_msgs/Joy~%# Reports the state of a joysticks axes and buttons.~%Header header           # timestamp in the header is the time the data is received from the joystick~%float32[] axes          # the axes measurements from a joystick~%int32[] buttons         # the buttons measurements from a joystick ~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
