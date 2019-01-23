@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/osboxes/workspace/mhlmt_git/catkin_ws/install/setup.sh
+    local-name: /home/dev/workspace/mhmlt/catkin_ws/install/setup.sh

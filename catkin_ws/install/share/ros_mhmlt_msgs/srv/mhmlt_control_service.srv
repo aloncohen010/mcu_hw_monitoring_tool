@@ -1,3 +1,0 @@
-string command  # command to send to the mcu
----
-string response # response to the command from the mcu

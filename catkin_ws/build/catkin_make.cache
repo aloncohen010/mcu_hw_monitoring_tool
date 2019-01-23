@@ -1,2 +1,2 @@
-begginer_tutorials:ros_mhmlt_msgs
--DCATKIN_DEVEL_PREFIX=/home/osboxes/workspace/mhlmt_git/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/osboxes/workspace/mhlmt_git/catkin_ws/install -G Unix Makefiles
+ros_type_introspection
+-DCATKIN_DEVEL_PREFIX=/home/dev/workspace/mhmlt/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dev/workspace/mhmlt/catkin_ws/install -G Unix Makefiles

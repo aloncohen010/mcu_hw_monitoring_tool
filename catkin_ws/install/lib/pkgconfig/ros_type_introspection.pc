@@ -1,0 +1,8 @@
+prefix=/home/dev/workspace/mhmlt/catkin_ws/install
+
+Name: ros_type_introspection
+Description: Description of ros_type_introspection
+Version: 1.2.0
+Cflags: -I/home/dev/workspace/mhmlt/catkin_ws/install/include
+Libs: -L/home/dev/workspace/mhmlt/catkin_ws/install/lib -lros_type_introspection
+Requires: roscpp rostime roscpp_serialization abseil_cpp
